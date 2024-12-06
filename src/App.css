@@ -1,0 +1,346 @@
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif;
+  color: #4a4a4a;
+}
+
+.question-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(216, 180, 154, 0.1);
+  margin-top: 20px;
+}
+
+.question-container h1 {
+  color: #b86b3d; /* より濃いオレンジブラウン */
+  text-align: center;
+  font-size: 36px; /* サイズを大きく */
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* 少し影をつけて立体感を出す */
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #faf3e0;
+  border-radius: 10px;
+  margin: 30px 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(45deg, #d4a373, #e9c39b);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.option-button {
+  padding: 15px 25px;
+  border: 1px solid #e9c39b;
+  border-radius: 8px;
+  background: #fff;
+  color: #4a4a4a;
+  cursor: pointer;
+  text-align: left;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.option-button:hover {
+  background: #faf3e0;
+  border-color: #d4a373;
+  transform: translateY(-2px);
+}
+
+/* 結果画面のスタイル */
+.result-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(216, 180, 154, 0.1);
+}
+
+.result-title {
+  color: #b86b3d;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.type-box {
+  background: #faf3e0;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.type-box h4 {
+  color: #d4a373;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.traits-box {
+  margin-top: 25px;
+}
+
+.traits-box h5 {
+  color: #d4a373;
+  font-size: 18px;
+  margin: 20px 0 15px;
+}
+
+.traits-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.traits-box li {
+  margin: 12px 0;
+  padding-left: 25px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.traits-box li:before {
+  content: "♦";
+  color: #e9c39b;
+  position: absolute;
+  left: 0;
+}
+
+.cta-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 30px;
+  border: 2px solid #faf3e0;
+}
+
+.seminar-button {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(45deg, #d4a373, #e9c39b);
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+  border: none;
+}
+
+.seminar-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(216, 180, 154, 0.2);
+}
+
+.restart-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: #fff;
+  color: #d4a373;
+  border: 2px solid #d4a373;
+  border-radius: 8px;
+  margin-top: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.restart-button:hover {
+  background: #faf3e0;
+}
+.decoration-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+  opacity: 0.4;
+  border-radius: 50%;
+  animation: float 6s infinite;
+}
+
+.sparkle1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.sparkle2 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.sparkle3 {
+  bottom: 15%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+    opacity: 0.4;
+  }
+}
+/* 装飾的な要素のスタイル */
+.decoration-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.corner-decoration {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  opacity: 0.1;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  border-top: 2px solid #d4a373;
+  border-left: 2px solid #d4a373;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  border-top: 2px solid #d4a373;
+  border-right: 2px solid #d4a373;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid #d4a373;
+  border-left: 2px solid #d4a373;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid #d4a373;
+  border-right: 2px solid #d4a373;
+}
+
+/* メインコンテンツのスタイル調整 */
+.question-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(212, 163, 115, 0.2);
+}
+
+.result-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+}
+/* メールフォーム用のスタイル */
+.email-form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(216, 180, 154, 0.1);
+}
+
+.email-input {
+  width: 100%;
+  padding: 12px;
+  margin: 20px 0;
+  border: 1px solid #d4a373;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.submit-button {
+  background: linear-gradient(45deg, #d4a373, #e9c39b);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+}
+
+.error-message {
+  color: #dc3545;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.result-illustration {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.type-illustration {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(216, 180, 154, 0.2);
+}
+.result-main h3 {
+  text-align: center;
+  margin: 30px 0;
+  color: #4a4a4a;
+  font-size: 24px;
+}
